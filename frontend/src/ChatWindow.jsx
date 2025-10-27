@@ -1,13 +1,16 @@
 import "./ChatWindow.css";
 import Chat from "./Chat.jsx";
 import {MyContext} from "./MyContext.jsx";
-import {useContext} from "react";
+import {useContext, useState} from "react";
+import {ScaleLoader} from "react-spinners";
 
 function ChatWindow(){
     const {prompt , setPrompt, reply ,setReply , currThreadId} = useContext(MyContext);
-    
+    const [loading , setLoading] = useState(false);
+
     const getReply = async()=>{
         console.log(prompt , currThreadId);
+        setLoading(true);
         const option={
             method:"POST",
             headers:{
@@ -20,10 +23,14 @@ function ChatWindow(){
         };
         try{
             const response = await fetch("http://localhost:8080/api/chat", option);
-            console.log(response);
+            const data = await response.json();
+            
+            console.log("Server response  : " ,data);
+            setReply(data.reply);
         }catch(err){
             console.log(err);
         }
+        setLoading(false);
     }
 
 
@@ -39,13 +46,16 @@ function ChatWindow(){
         </div>
         
         <Chat></Chat>
+        <ScaleLoader color='#fff' loading={loading}
+        ></ScaleLoader>
 
         <div className="chatInput">
                 <div className="inputBox">
                     <input placeholder="Ask anything" 
                         value={prompt}
-                        onChange={(e)=>setPrompt(e.target.value)}>
-                        
+                        onChange={(e)=>setPrompt(e.target.value)}
+                        onKeyDown={(e)=>e.key==='Enter'? getReply():''}
+                        >
                     </input>
                     <div id="submit" onClick={getReply}>
                         <i className="fa-solid fa-paper-plane"></i>
