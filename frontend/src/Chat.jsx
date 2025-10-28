@@ -1,5 +1,5 @@
 import "./Chat.css";
-import {useContext} from "react";
+import {useContext , useState} from "react";
 import {MyContext} from "./MyContext";
 
 import ReactMarkdown from "react-markdown";
@@ -9,6 +9,7 @@ import "highlight.js/styles/github-dark.css";
 
 export default function Chat(){
     const {newChat ,prevChats } =useContext(MyContext);
+    const {latestReply , setLatestReply} = useState(null);
 
     return (
         <>
@@ -27,16 +28,16 @@ export default function Chat(){
                     }
 
 
-                <div className="userDiv">
+                {/* <div className="userDiv">
                     <p className="userMessage">
-                       
+                       hi user message
                     </p>
                 </div>
                 <div className="gptDiv">
                     <p className="gptMessage">
-                      
+                       hi gpt message
                     </p>
-                </div>
+                </div> */}
             </div>
         
         </>

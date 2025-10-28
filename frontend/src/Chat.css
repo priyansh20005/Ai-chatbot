@@ -12,13 +12,14 @@
     display:flex;
     justify-content:flex-end;
     font-size:0.9rem;
+    /* background-color:#323232; */
+    padding:10px 20px;
 }
 
 .gptDiv{
     text-align:left;
     font-size:0.9rem;
-
-
+    
 }
 
 .userMessage{
@@ -30,6 +31,11 @@
     width:fit-content;
 }
 
-.gptMessage{
+.hljs{
+    border-radius:14px !important ;
 
+}
+
+pre{
+    white-space:pre-wrap;
 }
