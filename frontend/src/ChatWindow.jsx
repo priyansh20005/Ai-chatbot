@@ -7,6 +7,7 @@ import {ScaleLoader} from "react-spinners";
 function ChatWindow(){
     const {prompt , setPrompt, reply ,setReply , currThreadId , prevChats , setPrevChats , setNewChat} = useContext(MyContext);
     const [loading , setLoading] = useState(false);
+    const [isOpen , setIsOpen] = useState(false);
 
     const getReply = async()=>{
         console.log(prompt , currThreadId);
@@ -52,17 +53,30 @@ function ChatWindow(){
         // setReply(null);
     } , [reply]);
 
+    const handleProfileClick=()=>{
+        setIsOpen(!isOpen);
+    }
+
 
     return(
        <div className="chatWindow">
         <div className="navbar">
             <span>AI-chatbot  <i className="fa-solid fa-arrow-down"></i></span>
-            <div className="userIconDiv">
+            <div className="userIconDiv" onClick={handleProfileClick}>
                <span className="userIcon">
                  <i className="fa-solid fa-user"></i>
                </span>
             </div>
         </div>
+        {
+            isOpen && 
+            <div className="dropDown">
+                <div className="dropDownItem">Upgrade plan <i class="fa-solid fa-cloud-arrow-up"></i></div>
+                <div className="dropDownItem">Settings <i class="fa-solid fa-gear"></i></div>
+                <div className="dropDownItem">Log Out <i class="fa-solid fa-right-from-bracket"></i></div>
+                
+            </div>
+        }
         
         <Chat></Chat>
         <ScaleLoader color='#fff' loading={loading}
