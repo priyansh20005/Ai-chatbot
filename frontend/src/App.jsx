@@ -29,9 +29,18 @@ function App() {
       <MyContext.Provider value={providerValues}>
           <Sidebar></Sidebar>
           <ChatWindow></ChatWindow>
+          {/* <div className="sidebar">
+          <Sidebar />
+        </div>
+        <div className="chat-window">
+          <ChatWindow />
+        </div> */}
         </MyContext.Provider>
     </div>
   )
 }
 
 export default App
+
+
+// //////////////////////////////////////////////////////////////////////////////////////////////
