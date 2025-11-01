@@ -4,6 +4,8 @@ import {MyContext} from "./MyContext.jsx";
 import {useContext, useState , useEffect} from "react";
 import {ScaleLoader} from "react-spinners";
 
+const API_BASE = import.meta.env.VITE_API_URL;
+
 function ChatWindow(){
     const {prompt , setPrompt, reply ,setReply , currThreadId , prevChats , setPrevChats , setNewChat} = useContext(MyContext);
     const [loading , setLoading] = useState(false);
@@ -24,7 +26,7 @@ function ChatWindow(){
             })
         };
         try{
-            const response = await fetch("http://localhost:8080/api/chat", option);
+            const response = await fetch(`${API_BASE}/chat`, option);
             const data = await response.json();
             
             console.log("Server response  : " ,data);
