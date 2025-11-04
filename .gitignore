@@ -17,3 +17,6 @@ build/
 .DS_Store
 Thumbs.db
 .vscode/
+
+# key to connect with aws ec2 instance
+ai-chatbot-key-new.pem
