@@ -1,0 +1,159 @@
+/* *{
+    color:#ececec;
+    font-family:Roboto, 'Open Sans','Helvetica Neue', sans-serif;
+
+}
+
+body{
+    margin:0;
+    padding:0;
+}
+
+.app{
+    background-color: #212121;
+    display:flex;
+} */
+
+/* //////////////////////////////////////////////////////////////////////////////////////////// */
+
+/* ===== UNIFIED HEALTH CHATBOT THEME ===== */
+/* ===== HEALTH CHATBOT THEME ===== */
+:root {
+  /* Primary Health Colors */
+  --primary-blue: #1D4E89;
+  --primary-teal: #2A9D8F;
+  --light-teal: #A8DADC;
+  --lightest-blue: #F1FAEE;
+  
+  /* Neutrals */
+  --white: #FFFFFF;
+  --light-gray: #F8F9FA;
+  --medium-gray: #E9ECEF;
+  --text-gray: #6C757D;
+  --dark-gray: #343A40;
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  background-color: var(--lightest-blue);
+  color: var(--dark-gray);
+  line-height: 1.5;
+}
+
+/* ===== MAIN APP ===== */
+.app {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  background: var(--lightest-blue);
+}
+
+/* ===== HEADER ===== */
+.minimal-header {
+  background: linear-gradient(135deg, var(--primary-blue), #2C5282);
+  color: var(--white);
+  padding: 0.8rem 2rem;
+  height: 70px;
+  flex-shrink: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-logo {
+  font-size: 1.8rem;
+  color: var(--light-teal);
+}
+
+.logo-title h1 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.header-subtitle {
+  font-size: 0.85rem;
+  opacity: 0.9;
+  margin-left: 0.5rem;
+  color: var(--light-teal);
+}
+
+/* ===== MAIN SCROLLABLE AREA ===== */
+.main-scrollable-area {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+/* ===== APP CONTAINER ===== */
+.app-container {
+  display: flex;
+  min-height: 100%;
+  height: auto;
+}
+
+/* Main Chat Area */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  overflow: hidden;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1024px) {
+  .header-content {
+    padding: 0 1rem;
+  }
+  
+  .app-container {
+    flex-direction: column;
+  }
+  
+  .minimal-header {
+    padding: 0.8rem 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .minimal-header {
+    height: 60px;
+    padding: 0.6rem 1rem;
+  }
+  
+  .logo-title h1 {
+    font-size: 1.2rem;
+  }
+  
+  .header-subtitle {
+    display: none;
+  }
+}

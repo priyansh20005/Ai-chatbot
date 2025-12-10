@@ -12,7 +12,10 @@ app.use(express.json());
 // app.use(cors());
 const allowedOrigins = [
   "http://localhost:5173", // local dev
-  "https://your-frontend-domain.com" // replace later after deployment
+  "https://your-frontend-domain.com"  ,// replace later after deployment
+  "http://54.90.94.99:3000" ,
+   "https://aarogyam-4-u.onrender.com",
+   "https://ai-chatbot-arx9u93i5-priyansh-koshtis-projects-3e74a598.vercel.app/"
 ];
 
 app.use(
