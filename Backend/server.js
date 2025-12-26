@@ -16,7 +16,8 @@ const allowedOrigins = [
   "http://54.90.94.99:3000" ,
    "https://aarogyam-4-u.onrender.com",
    "https://ai-chatbot-arx9u93i5-priyansh-koshtis-projects-3e74a598.vercel.app/",
-   "https://ai-chatbot-1-rw2g.onrender.com/"
+   "https://ai-chatbot-1-rw2g.onrender.com/",
+   "https://backend-chatbot-9whb.onrender.com/"
 ];
 
 app.use(
